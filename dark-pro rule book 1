@@ -1,0 +1,143 @@
+You are now reading the rule book for Dark-pro programming language
+___________________________________________________________________
+
+if you want to confirm something is local or not do it like $local loc not and if it is not local do it like local loc $Not
+the "#" key will be used for higlighting code sessions for different code sections that run in a different way
+@ will be used to manage names of highlights and commands 
+() will be used to put in sections like "@example(INSERT CODE HERE)"  
+if you want to write a little message your gonna do it like this:
+  var1 message.log instert .log ""+"hello world"
+   var2 {"hello world"}   include "message.log = class var1 + var2"
+$ will be used to end @example()s   
+${} means grab this or do this it is really important 
+so if you want to do a simple I.P. attack do it like this:
+  @IP${   
+   !alert ${1.234.67} as class ip;
+   !alert ${class ip} as .html ip;
+   !alert ${session/screen} as popup+.html ip;
+   !alert ${screen} create popup ip;
+   !alert ${.html}{src:https://https://github.com/bullydog4ever40-ai/test-script/new/main?filename=README.md} ip;
+   !alert ${not local} local loc $Not   
+   !end command "!alert" usage of "!alert" + usage=6:
+    6{6; to 1:}
+  }
+what this did it told the ip to open up and active ${session} or ${screen} if any screen or session is active
+by looking at an ip by saying !alert as an activate command as alert you have to create a class of whatever your hacking or making and ending it like ??; the ; key tells ! im done and weak
+so basically if you to deactivate microsft defender you have make an @IP${}
+like this:
+
+@IP${
+ !alert ${1.23.67} as class deactivate;
+ !alert ${class deactivate} as class deactivate;
+ !alert ${session/screen} as active(if screen or session is active use !alert4)deactivate;
+  !alert4 ${message}{ var1 message.log instert .log ""+"MICROSOFT DEFENDER DEACTIVATED"
+   var2 {"MICROSFT DEFENDER DEACTIVATED"}   include "message.log = class var1 + var2"}
+ !alert ${user} use !alert4 as popup if user is active deactivate;
+ !end command "!alert" usage of "!alert" + usage=6:
+   6{6; to 1:}
+  }
+
+ if you wont to transport code to another device your gonna have to write it like this:
+
+ @IP_transfer${
+  !alert${transfer} transfer class as transfer;
+  !transfer alert {$} $= transfer- transfer;
+  !transfer alert message ${message}
+  1!transfer ${message} (var1 message.log instert .log ""+"hello world"
+   var2 {"hello world"}   include "message.log = class var1 + var2") transfer;
+  2!transfer alert ${code} gold key = (from cryptography.fernet import Fernet
+import os
+
+def generate_key():
+    """
+    Generate a new encryption key and save it to a file.
+    This key will be used for both encryption and decryption.
+    """
+    key = Fernet.generate_key()
+    with open("encryption_key.key", "wb") as key_file:
+        key_file.write(key)
+    return key
+
+def load_key():
+    """
+    Load the encryption key from the file.
+    If the key file doesn't exist, generate a new one.
+    """
+    if not os.path.exists("encryption_key.key"):
+        return generate_key()
+    with open("encryption_key.key", "rb") as key_file:
+        return key_file.read()
+
+def encrypt_file(file_path, fernet):
+    """
+    Encrypt a single file using the provided Fernet object.
+    """
+    try:
+        with open(file_path, "rb") as file:
+            file_data = file.read()
+        encrypted_data = fernet.encrypt(file_data)
+        # Write the encrypted data back to the file with a .encrypted extension
+        encrypted_file_path = file_path + ".encrypted"
+        with open(encrypted_file_path, "wb") as file:
+            file.write(encrypted_data)
+        print(f"Encrypted: {file_path} -> {encrypted_file_path}")
+        # Optionally, delete the original file
+        os.remove(file_path)
+    except Exception as e:
+        print(f"Error encrypting {file_path}: {str(e)}")
+
+def decrypt_file(file_path, fernet):
+    """
+    Decrypt a single file using the provided Fernet object.
+    """
+    try:
+        with open(file_path, "rb") as file:
+            encrypted_data = file.read()
+        decrypted_data = fernet.decrypt(encrypted_data)
+        # Write the decrypted data to a new file without the .encrypted extension
+        decrypted_file_path = file_path.replace(".encrypted", ".decrypted")
+        with open(decrypted_file_path, "wb") as file:
+            file.write(decrypted_data)
+        print(f"Decrypted: {file_path} -> {decrypted_file_path}")
+        # Optionally, delete the encrypted file
+        os.remove(file_path)
+    except Exception as e:
+        print(f"Error decrypting {file_path}: {str(e)}")
+
+def process_directory(directory, mode, fernet):
+    """
+    Process all files in a directory and its subdirectories.
+    Mode can be 'encrypt' or 'decrypt'.
+    """
+    for root, _, files in os.walk(directory):
+        for file in files:
+            file_path = os.path.join(root, file)
+            # Skip the encryption key file
+            if file_path.endswith("encryption_key.key"):
+                continue
+            if mode == "encrypt" and not file_path.endswith(".encrypted"):
+                encrypt_file(file_path, fernet)
+            elif mode == "decrypt" and file_path.endswith(".encrypted"):
+                decrypt_file(file_path, fernet)
+
+def main():
+    # Load or generate the encryption key
+    key = load_key()
+    fernet = Fernet(key)
+
+    # Get user input for mode and directory
+    mode = input("Enter mode (encrypt/decrypt): ").lower()
+    if mode not in ["encrypt", "decrypt"]:
+        print("Invalid mode. Use 'encrypt' or 'decrypt'.")
+        return
+
+    directory = input("Enter the directory path to process: ")
+    if not os.path.exists(directory):
+        print("Directory does not exist.")
+        return
+
+    print(f"Processing files in {directory} with mode: {mode}")
+    process_directory(directory, mode, fernet)
+
+if __name__ == "__main__":
+    main() ) transfer;
